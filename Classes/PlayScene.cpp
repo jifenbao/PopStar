@@ -1,5 +1,7 @@
 #include "PlayScene.h"
 #include "BackgroundLayer.h"
+#include "AnimationLayer.h"
+#include "StatusLayer.h"
 USING_NS_CC;
 
 Scene* PlayScene::scene()
@@ -24,8 +26,12 @@ bool PlayScene::init()
    BackgroundLayer *bkLayer = BackgroundLayer::create();
     addChild(bkLayer);
     
+    AnimationLayer *anLayer = AnimationLayer::create();
+    addChild(anLayer);
     
-    
+    StatusLayer * sLayer = StatusLayer::create();
+    addChild(sLayer);
+
     return true;
 }
 
