@@ -61,6 +61,8 @@ set(GAME_SRC
   Classes/PopStarScene.cpp
   Classes/PlayScene.cpp
   Classes/BackgroundLayer.cpp
+  Classes/AnimationLayer.cpp
+  Classes/StatusLayer.cpp
 )
 elseif ( WIN32 )
 set(GAME_SRC
@@ -71,6 +73,8 @@ set(GAME_SRC
   Classes/PopStarScene.cpp
   Classes/PlayScene.cpp
   Classes/BackgroundLayer.cpp
+  Classes/AnimationLayer.cpp
+  Classes/StatusLayer.cpp
 )
 endif()
 
@@ -134,6 +138,8 @@ include_directories(
   /usr/include/GLFW
   ${COCOS2D_ROOT}
   ${COCOS2D_ROOT}/cocos
+  ${COCOS2D_ROOT}/cocos/base
+  ${COCOS2D_ROOT}/cocos/2d
   ${COCOS2D_ROOT}/cocos/audio/include
   ${COCOS2D_ROOT}/cocos/platform
   ${COCOS2D_ROOT}/cocos/platform/desktop
