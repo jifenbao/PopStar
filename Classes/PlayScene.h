@@ -3,6 +3,8 @@
 
 #include "cocos2d.h"
 
+#include "chipmunk.h"
+
 class PlayScene : public cocos2d::Scene
 {
 public:
@@ -20,6 +22,12 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(PlayScene);
+
+    void initPhysics();
+
+    void update(float dt);
+
+    cpSpace *space;
 };
 
 #endif // __POPSTAR_SCENE_H__
