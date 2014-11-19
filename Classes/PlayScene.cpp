@@ -25,16 +25,21 @@ bool PlayScene::init()
 	//初始化物理引擎
 	initPhysics();
 
-    //add 3 layers
-   
-   BackgroundLayer *bkLayer = BackgroundLayer::create();
-    addChild(bkLayer);
+
+    //创建一个新的层，把background和animation层加进来
+
+    gameLayer = Layer::create();
+
+    BackgroundLayer *bkLayer = BackgroundLayer::create();
+    gameLayer->addChild(bkLayer,0,GlobalUtils::background);
     
     AnimationLayer *anLayer = AnimationLayer::create(this->space);
-    addChild(anLayer);
-    
+    gameLayer->addChild(anLayer, 0, GlobalUtils::Animation);
+
+    addChild(gameLayer);
+
     StatusLayer * sLayer = StatusLayer::create();
-    addChild(sLayer);
+    addChild(sLayer, 0, GlobalUtils::Status);
 
 
     //调度更新

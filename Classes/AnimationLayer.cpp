@@ -69,7 +69,15 @@ bool AnimationLayer::init()
         sprite->runAction(runningAction);
         spriteSheet->addChild(sprite);
 
-		bRet = true;
-	}while(0);
+        scheduleUpdate();
+
+        bRet = true;
+    }while(0);
 	return bRet;
+}
+
+
+int AnimationLayer::getEyeX()
+{
+    return sprite->getPositionX() - GlobalUtils::g_runnerStartX;
 }

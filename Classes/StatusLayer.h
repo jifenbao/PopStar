@@ -10,7 +10,7 @@ class StatusLayer:public Layer
 {
 public:
 	virtual bool init();
-	CREATE_FUNC(StatusLayer);
+    CREATE_FUNC(StatusLayer)
 
 	LabelTTF*		labelCoin;
 	LabelTTF*    	labelMeter;

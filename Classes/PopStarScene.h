@@ -19,7 +19,7 @@ public:
     void menuStartCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
-    CREATE_FUNC(PopStar);
+    CREATE_FUNC(PopStar)
 };
 
 #endif // __POPSTAR_SCENE_H__

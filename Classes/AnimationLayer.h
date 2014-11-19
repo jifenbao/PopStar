@@ -15,6 +15,9 @@ public:
 
     static AnimationLayer *create(cpSpace *_space);
 
+    int getEyeX();
+
+
 	Size		m_szWinSize;
 	Point		m_ptStart;
 

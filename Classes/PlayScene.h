@@ -20,14 +20,19 @@ public:
     // a selector callback
     void menuStartCallback(cocos2d::Ref* pSender);
     
-    // implement the "static create()" method manually
-    CREATE_FUNC(PlayScene);
-
+    //初始化物理引擎
     void initPhysics();
 
+    //按时更新
     void update(float dt);
 
+    // implement the "static create()" method manually
+    CREATE_FUNC(PlayScene)
+
+
     cpSpace *space;
+
+    cocos2d::Layer   *gameLayer;
 };
 
 #endif // __POPSTAR_SCENE_H__
