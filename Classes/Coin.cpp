@@ -6,14 +6,14 @@ Coin::Coin(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p)
     _mapIndex = 0;
 
     //加载金币的动画
-    CCArray *animFrames = CCArray::create();
+    Vector< SpriteFrame * > animFrames;
 
     for (int i = 0; i < 8; i++)
     {
         String *str = String::createWithFormat("coin%d.png",i);
         SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(str->getCString());
 
-        animFrames->addObject(frame);
+        animFrames.pushBack(frame);
     }
 
 
@@ -33,7 +33,7 @@ Coin::Coin(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p)
 
     this->shape = cpCircleShapeNew(body,radius,cpvzero);
 
-    this->shape->collision_type = GlobalUtils::coin;
+    this->shape->collision_type = coin;
     //这个应该是设置冲突检测生效的
     this->shape->sensor = true;
 
@@ -44,6 +44,16 @@ Coin::Coin(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p)
     spriteSheet->addChild(this->sprite,1);
 
 }
+
+
+Coin* Coin::create(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p)
+{
+    Coin *coin = new Coin(spriteSheet,space,p);
+    coin->autorelease();
+
+    return coin;
+}
+
 
 void Coin::removeFromParent()
 {
@@ -56,5 +66,5 @@ void Coin::removeFromParent()
 
 cpShape *Coin::getShape()
 {
-    return this->getShape();
+    return this->shape;
 }

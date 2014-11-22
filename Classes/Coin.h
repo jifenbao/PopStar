@@ -20,6 +20,8 @@ int            _mapIndex;
 
 Coin(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p);
 
+static Coin *create(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p);
+
 void removeFromParent();
 
 cpShape *getShape();

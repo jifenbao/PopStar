@@ -14,6 +14,9 @@ class Rock:public Object
 public:
     Rock(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p);
 
+    static Rock* create(SpriteBatchNode *spriteSheet, cpSpace *space, cpVect p);
+    void removeFromParent();
+    cpShape *getShape();
 
     cpSpace        *space;
     PhysicsSprite  *sprite;

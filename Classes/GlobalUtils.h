@@ -8,10 +8,14 @@ public:
 	static const int g_runnerStartX = 80;
 	static const int g_MAX_LONG = 4294967295;
 
-    enum TagOfLayer
+
+};
+
+
+enum TagOfLayer
     {
         background = 0,
-        Animation,
+        animation,
         Status
 
     };
@@ -22,7 +26,5 @@ public:
         coin,
         rock
     };
-};
-
 
 #endif

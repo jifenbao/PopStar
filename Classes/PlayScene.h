@@ -2,8 +2,10 @@
 #define __PLAY_SCENE_H__
 
 #include "cocos2d.h"
-
+#include <CCVector.h>
 #include "chipmunk.h"
+
+USING_NS_CC;
 
 class PlayScene : public cocos2d::Scene
 {
@@ -29,10 +31,12 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(PlayScene)
 
-
     cpSpace *space;
 
     cocos2d::Layer   *gameLayer;
+
+
+
 };
 
 #endif // __POPSTAR_SCENE_H__
